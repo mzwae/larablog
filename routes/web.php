@@ -26,5 +26,9 @@ Route::get('/contact', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+
+    $article = App\Article::take(3)->latest()->get();
+
+    return view('about', ['articles' => $article]);
 });
+
