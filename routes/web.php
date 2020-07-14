@@ -32,4 +32,8 @@ Route::get('/about', function () {
     return view('about', ['articles' => $article]);
 });
 
+
+
+Route::get('articles', 'ArticlesController@index');
+
 Route::get('articles/{article}', 'ArticlesController@show');
