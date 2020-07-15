@@ -15,9 +15,9 @@
             <p><img src="/images/banner.jpg" alt="" class="image image-full" /> </p>
             {{ $article->excerpt }}
 		</div>
-	</div>
+    </div>
+
         @endforeach
-        {{ $articles->links() }}
 </div>
 
 
