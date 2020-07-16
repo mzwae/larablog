@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
+@section('head')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+@endsection
+
 @section('content')
     <div id="wrapper">
         <div id="page" class="container">
             <h1 class="heading has-text-weight-bold is-size-4">New Article</h1>
-            <form action="">
-
+            <form action="/articles" method="post">
+                @csrf
                 <div class="field">
                     <label for="title" class="lable">
                         Title
