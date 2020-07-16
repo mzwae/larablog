@@ -3,7 +3,7 @@
 @section('content')
     <div id="wrapper">
         <div id="page" class="container">
-            <h1>New Article</h1>
+            <h1 class="heading has-text-weight-bold is-size-4">New Article</h1>
             <form action="">
 
                 <div class="field">
@@ -40,10 +40,6 @@
 
                     <div class="control">
                         <button class="button is-link" type="submit">Submit</button>
-                    </div>
-
-                    <div class="control">
-                        <button class="button is-text">Cancel</button>
                     </div>
 
                 </div>
