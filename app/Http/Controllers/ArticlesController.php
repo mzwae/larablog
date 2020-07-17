@@ -50,9 +50,11 @@ class ArticlesController extends Controller
      * Shows a view to edit an existing article
      */
 
-    public function edit()
+    public function edit($id)
     {
-        return view('articles.edit');
+        $articles = Article::find($id);
+
+        return view('articles.edit', ['article' => $articles]);
     }
 
     /**
