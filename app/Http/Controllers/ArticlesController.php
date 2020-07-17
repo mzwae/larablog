@@ -43,7 +43,7 @@ class ArticlesController extends Controller
 
     public function store()
     {
-
+       dd(request()->all());
     }
 
     /**
@@ -52,7 +52,7 @@ class ArticlesController extends Controller
 
     public function edit()
     {
-
+        return view('articles.edit');
     }
 
     /**
