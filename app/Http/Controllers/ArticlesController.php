@@ -61,9 +61,17 @@ class ArticlesController extends Controller
      * Persist the edited article
      */
 
-    public function update()
+    public function update($id)
     {
+        $article = Article::find($id);
 
+        $article->title = request('title');
+        $article->title = request('title');
+        $article->title = request('title');
+
+        $article->save();
+
+        return redirect('/articles/' . $article->id);
     }
 
     /**
