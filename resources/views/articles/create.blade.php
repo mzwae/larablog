@@ -31,7 +31,7 @@
                     </label>
 
                     <div class="control">
-                        <textarea name="excerpt" id="excerpt" cols="30" rows="10" class="textarea @error('excerpt') is-danger @enderror"></textarea>
+                        <textarea name="excerpt" id="excerpt" class="textarea @error('excerpt') is-danger @enderror"></textarea>
 
                         @error('excerpt')
                             <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
@@ -46,7 +46,7 @@
                     </label>
 
                     <div class="control">
-                        <textarea name="body" id="body" cols="30" rows="10" class="textarea @error('body') is-danger @enderror"></textarea>
+                        <textarea name="body" id="body" class="textarea @error('body') is-danger @enderror"></textarea>
 
                         @error('body')
                             <p class="help is-danger">{{ $errors->first('body') }}</p>
