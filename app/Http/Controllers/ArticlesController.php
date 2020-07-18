@@ -41,9 +41,13 @@ class ArticlesController extends Controller
      * Persist the newly created article
      */
 
-    public function store()
+    public function store($id)
     {
-
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
 
         $article = Article::find($id);
 
@@ -73,6 +77,11 @@ class ArticlesController extends Controller
 
     public function update($id)
     {
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
 
         $article = Article::find($id);
 
