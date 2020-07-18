@@ -16,7 +16,12 @@
                     </label>
 
                     <div class="control">
-                        <input type="text" class="input" name="title" id="title">
+                        <input type="text" class="input @error('title') is-danger @enderror" name="title" id="title">
+
+                        @error('title')
+                            <p class="help is-danger">{{ $errors->first('title') }}</p>
+                        @enderror
+
                     </div>
                 </div>
 
@@ -26,7 +31,12 @@
                     </label>
 
                     <div class="control">
-                        <textarea name="excerpt" id="excerpt" cols="30" rows="10" class="textarea"></textarea>
+                        <textarea name="excerpt" id="excerpt" cols="30" rows="10" class="textarea @error('excerpt') is-danger @enderror"></textarea>
+
+                        @error('excerpt')
+                            <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                        @enderror
+
                     </div>
                 </div>
 
@@ -36,7 +46,11 @@
                     </label>
 
                     <div class="control">
-                        <textarea name="body" id="excerpt" cols="30" rows="10" class="textarea"></textarea>
+                        <textarea name="body" id="body" cols="30" rows="10" class="textarea @error('body') is-danger @enderror"></textarea>
+
+                        @error('body')
+                            <p class="help is-danger">{{ $errors->first('body') }}</p>
+                        @enderror
                     </div>
                 </div>
 
