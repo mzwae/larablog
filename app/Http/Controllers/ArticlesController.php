@@ -52,8 +52,8 @@ class ArticlesController extends Controller
         $article = new Article;
 
         $article->title = request('title');
-        $article->title = request('title');
-        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
 
         $article->save();
 
@@ -86,8 +86,8 @@ class ArticlesController extends Controller
         $article = Article::find($id);
 
         $article->title = request('title');
-        $article->title = request('title');
-        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
 
         $article->save();
 
