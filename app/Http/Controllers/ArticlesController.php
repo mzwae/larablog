@@ -10,10 +10,8 @@ class ArticlesController extends Controller
     /**
      *  Show a single article
      */
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::find($id);
-
         return view('articles.show', ['article' => $article]);
     }
 
@@ -64,26 +62,22 @@ class ArticlesController extends Controller
      * Shows a view to edit an existing article
      */
 
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $articles = Article::find($id);
-
-        return view('articles.edit', ['article' => $articles]);
+        return view('articles.edit', ['article' => $article]);
     }
 
     /**
      * Persist the edited article
      */
 
-    public function update($id)
+    public function update(Article $article)
     {
         request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
         ]);
-
-        $article = Article::find($id);
 
         $article->title = request('title');
         $article->excerpt = request('excerpt');
