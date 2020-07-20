@@ -63,7 +63,7 @@ class ArticlesController extends Controller
     {
         $article->update($this->validateArticle());
 
-        return redirect('/articles/' . $article->id);
+        return redirect(route('articles.show', ['article' => $article->id]));
     }
 
     /**
