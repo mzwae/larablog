@@ -16,7 +16,7 @@
                     </label>
 
                     <div class="control">
-                    <input type="text" class="input @error('title') is-danger @enderror" name="title" id="title" value="{{ old('title')}}">
+                    <input type="text" class="input @error('title') is-danger @enderror" name="title" id="title" value="{{ old('title') }}">
 
                         @error('title')
                             <p class="help is-danger">{{ $errors->first('title') }}</p>
