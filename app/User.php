@@ -37,11 +37,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * select * from articles where user_id =
+     * returns an eloquent collection
+     */
     public function articles()
     {
         return $this->hasMany(Article::class);
     }
 
+    /**
+     * select * from projects where user_id =
+     * returns an eloquent collection
+     */
     public function projects()
     {
         return $this->hasMany(Project::class);
