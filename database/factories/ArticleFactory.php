@@ -11,6 +11,6 @@ $factory->define(Article::class, function (Faker $faker) {
         'user_id' => factory(User::class),
         'title' => $faker->sentence,
         'excerpt' => $faker->paragraph,
-        'body' => $faker->paragraphs(5)
+        'body' => $faker->text(2000)
     ];
 });
