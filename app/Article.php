@@ -20,4 +20,9 @@ class Article extends Model
         //Define foreign key, otherwise Laravel will look for author_id by convention
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
