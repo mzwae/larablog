@@ -24,7 +24,6 @@ class CreateTagsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('article_id');
             $table->unsignedBigInteger('tag_id');
-            $table->string('name');
             $table->timestamps();
 
             $table->unique(['article_id', 'tag_id']);
@@ -43,5 +42,6 @@ class CreateTagsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('tags');
+        Schema::dropIfExists('article_tag');
     }
 }
