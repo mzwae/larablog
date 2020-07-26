@@ -49,7 +49,7 @@ class ArticlesController extends Controller
         // Article::create($this->validateArticle());
 
         $article = new Article($this->validateArticle());
-        $article->user_id = 1; // hardcode user_id for now...
+        $article->user_id = 2; // hardcode user_id for now...
         $article->save();
 
         $article->tags()->attach(request('tags'));
