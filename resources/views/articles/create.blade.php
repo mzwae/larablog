@@ -67,7 +67,7 @@
                             @endforeach
                         </select>
 
-                        @error('body')
+                        @error('tags')
                             <p class="help is-danger">{{ $message }}</p>
                         @enderror
 
