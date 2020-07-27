@@ -59,7 +59,7 @@
                         Tags
                     </label>
 
-                    <div class="control multiple">
+                    <div class="control select is-multiple">
 
                         <select name="tags[]" multiple id="tags">
                             @foreach ($tags as $tag)
