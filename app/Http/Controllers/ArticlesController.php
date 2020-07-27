@@ -46,9 +46,10 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        // Article::create($this->validateArticle());
+        $this->validateArticle();
 
-        $article = new Article($this->validateArticle());
+        $article = new Article(request(['title', 'excerpt', 'body']));
+
         $article->user_id = 2; // hardcode user_id for now...
         $article->save();
 
