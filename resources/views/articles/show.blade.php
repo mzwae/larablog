@@ -12,9 +12,11 @@
 
             <p class="mt-4">
                 @foreach($article->tags as $tag)
-            <a href="{{ route('articles.index', ['tag' => $tag->name])}}">{{ $tag->name }}</a>
+                    <a href="{{ route('articles.index', ['tag' => $tag->name])}}">{{ $tag->name }}</a>
                 @endforeach
             </p>
+
+        <a href="{{route('articles.edit', ['article' => $article->id])}}" class="btn btn-info">Edit</a>
 		</div>
 	</div>
 </div>
