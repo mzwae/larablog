@@ -38,7 +38,7 @@ Route::get('articles', 'ArticlesController@index')->name('articles.index');
 
 Route::post('articles', 'ArticlesController@store');
 
-Route::get('articles/create', 'ArticlesController@create');
+Route::get('articles/create', 'ArticlesController@create')->name('articles.create');
 
 Route::get('articles/{article}', 'ArticlesController@show')->name('articles.show');
 
