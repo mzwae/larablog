@@ -30,7 +30,7 @@ Route::get('/about', function () {
     $article = App\Article::take(3)->latest()->get();
 
     return view('about', ['articles' => $article]);
-});
+})->name('about');
 
 
 
