@@ -18,8 +18,10 @@ Released   : 20140225
         @include('layouts.navbar')
         @yield('header')
         @yield('content')
+
         <div id="copyright" class="container">
-            <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+            <p>&copy; MZ Apps. All rights reserved.</p>
         </div>
+
     </body>
 </html>
