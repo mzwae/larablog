@@ -1,14 +1,29 @@
-  <div id="header-wrapper">
-    <div id="header" class="container">
-        <div id="logo">
-            <h1><a href="/">Brand</a></h1>
-        </div>
-        <div id="menu">
-            <ul>
-                <li class="{{ Request::is('/') ? 'current_page_item' : ''}}"><a href="/" accesskey="1" title="">Homepage</a></li>
-                <li class="{{ Request::is('about') ? 'current_page_item' : ''}}"><a href="/about" accesskey="3" title="">About Us</a></li>
-                <li class="{{ Request::is('articles') ? 'current_page_item' : ''}}"><a href="/articles" accesskey="4" title="">Articles</a></li>
-                <li class="{{ Request::is('create') ? 'current_page_item' : ''}}"><a href="{{route('articles.create')}}" accesskey="5" title="">Create Article</a></li>
-            </ul>
-        </div>
-    </div>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/">LaraBlog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        </li>
+
+                        <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('about') }}">About us</a>
+                        </li>
+
+                        <li class="nav-item {{ Request::is('articles') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('articles.index') }}">Articles</a>
+                        </li>
+
+                        <li class="nav-item {{ Request::is('create') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('articles.create') }}">Create Article</a>
+                        </li>
+                  </ul>
+                </div>
+            </nav>
+
