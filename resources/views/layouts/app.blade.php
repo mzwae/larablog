@@ -14,7 +14,9 @@ Released   : 20140225
     <head>
         @include('layouts.head')
     </head>
-    <body class="container">
+
+
+    <body>
         @include('layouts.navbar')
         @yield('header')
         @yield('content')
