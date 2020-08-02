@@ -24,6 +24,18 @@
                         <a class="nav-link" href="{{ route('articles.create') }}">Create Article</a>
                         </li>
                   </ul>
+
+                  <div class="links">
+                    @auth
+                        {{-- <a href="{{ url('/home') }}">Home</a> --}}
+                        <a href="#">{{ Auth::user()->name }}</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
+                </div>
+
                 </div>
             </nav>
 
