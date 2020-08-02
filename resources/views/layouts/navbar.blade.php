@@ -23,18 +23,27 @@
                         <li class="nav-item {{ Request::is('create') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('articles.create') }}">Create Article</a>
                         </li>
+
                   </ul>
 
-                  <div class="links">
-                    @auth
-                        {{-- <a href="{{ url('/home') }}">Home</a> --}}
-                        <a href="#">{{ Auth::user()->name }}</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <ul class="navbar-nav mr-right">
+                            @auth
+                                {{-- <a href="{{ url('/home') }}">Home</a> --}}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('user.logout') }}">Log out</a>
+                                </li>
 
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
+                            @else
+                                <a href="{{ route('login') }}">Login</a>
+
+                                <a href="{{ route('register') }}">Register</a>
+                            @endauth
+                  </ul>
+
+
 
                 </div>
             </nav>
