@@ -23,11 +23,14 @@
                 <a class="nav-link" href="{{ route('articles.create') }}">Create Article</a>
             </li>
 
+            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+            </li>
+
         </ul>
 
         <ul class="navbar-nav mr-right">
             @auth
-            {{-- <a href="{{ url('/home') }}">Home</a> --}}
             <li class="nav-item">
                 <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
             </li>
