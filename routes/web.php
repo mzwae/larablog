@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contact', 'ContactController@show')->name('contact');
+Route::post('/contact', 'ContactController@store');
 
 Route::get('/about', function () {
 
@@ -29,8 +30,6 @@ Route::get('/about', function () {
 
     return view('about', ['articles' => $article]);
 })->name('about');
-
-
 
 Route::get('articles', 'ArticlesController@index')->name('articles.index');
 
@@ -43,6 +42,5 @@ Route::get('articles/{article}', 'ArticlesController@show')->name('articles.show
 Route::get('articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
 
 Route::put('articles/{article}', 'ArticlesController@update');
-
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user.logout');
