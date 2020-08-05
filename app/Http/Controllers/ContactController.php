@@ -10,4 +10,14 @@ class ContactController extends Controller
     {
         return view('contact');
     }
+
+
+    public function store()
+    {
+        request()->validate(['email' => 'required|email']);
+
+        $email = request('email');
+
+        dd($email);
+    }
 }
