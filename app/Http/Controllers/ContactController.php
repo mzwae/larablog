@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -16,8 +17,13 @@ class ContactController extends Controller
     {
         request()->validate(['email' => 'required|email']);
 
-        $email = request('email');
+        Mail::raw('This is just to confirm your email is valid', function ($message) {
+            $message->from('john@johndoe.com', 'John Doe')
+            ->to(request('email'))
+            ->subject('Hello From LaraBlog');
 
-        dd($email);
+        });
+
+        return view('contact');
     }
 }
