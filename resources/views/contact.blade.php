@@ -5,19 +5,23 @@
 <div class="container">
 
 
-<div class="text-center mt-5 border border-5 border-success w-50 p-5 mx-auto">
-<form method="POST" action="{{route('contact')}}">
-    @csrf
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Type your email here">
-        </div>
+    <div class="text-center mt-5 border border-5 border-success w-50 p-5 mx-auto">
+        <form method="POST" action="{{route('contact')}}">
+            @csrf
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Type your email here">
 
-        <button type="submit" class="btn btn-primary">Email Me</button>
+                @error('email')
+                    <div class="text-danger">{{$message}}</div>
+                @enderror
+            </div>
 
-    </form>
+            <button type="submit" class="btn btn-primary">Email Me</button>
 
-</div>
+        </form>
+
+    </div>
 
 </div>
 
