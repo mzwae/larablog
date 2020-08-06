@@ -4,6 +4,9 @@
 
 <div class="container">
 
+    @if(session('message'))
+        {{ session('message') }}
+    @endif
 
     <div class="text-center mt-5 border border-5 border-success w-50 p-5 mx-auto">
         <form method="POST" action="{{route('contact')}}">
