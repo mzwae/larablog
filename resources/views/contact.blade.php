@@ -5,7 +5,9 @@
 <div class="container">
 
     @if(session('message'))
-        {{ session('message') }}
+        <div class="alert alert-success mt-5" role="alert">
+            {{ session('message') }}
+        </div>
     @endif
 
     <div class="text-center mt-5 border border-5 border-success w-50 p-5 mx-auto">
