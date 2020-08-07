@@ -24,6 +24,6 @@ class ContactController extends Controller
 
         });
 
-        return redirect(route('contact'))->with('message', 'Email sent!');
+        return redirect(route('contact'))->with('message', 'Thank You. Your email has been sent!');
     }
 }
