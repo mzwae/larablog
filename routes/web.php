@@ -24,6 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact', 'ContactController@store');
 
+Route::get('/notify', 'ContactController@show')->name('notify');
+Route::post('/notify', 'ContactController@store');
+
 Route::get('/about', function () {
 
     $article = App\Article::take(3)->latest()->get();
