@@ -27,6 +27,10 @@
                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
             </li>
 
+            <li class="nav-item {{ Request::is('notify') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('notify') }}">Notify</a>
+            </li>
+
         </ul>
 
         <ul class="navbar-nav mr-right">
