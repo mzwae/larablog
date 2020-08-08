@@ -18,7 +18,8 @@ class ContactController extends Controller
     {
         request()->validate(['email' => 'required|email']);
 
-        Mail::to(request('email'))->send(new Contact());
+        Mail::to(request('email'))
+            ->send(new Contact());
 
 
         return redirect(route('contact'))->with('message', 'Thank You. Your email has been sent!');
