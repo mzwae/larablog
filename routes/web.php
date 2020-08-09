@@ -25,7 +25,7 @@ Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact', 'ContactController@store');
 
 Route::get('/notify', 'NotifyController@show')->name('notify');
-Route::post('/notify', 'NotifyController@store');
+Route::post('/notify', 'NotifyController@store')->name('notify.post');
 
 Route::get('/about', function () {
 
