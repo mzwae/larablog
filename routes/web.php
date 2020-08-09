@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contact', 'ContactController@show')->name('contact');
-Route::post('/contact', 'ContactController@store');
+Route::post('/contact', 'ContactController@store')->name('contact.post');
 
 Route::get('/notify', 'NotifyController@show')->name('notify');
 Route::post('/notify', 'NotifyController@store')->name('notify.post');
