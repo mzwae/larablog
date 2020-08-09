@@ -11,7 +11,7 @@
     @endif
 
     <div class="text-center mt-5 border border-5 border-success w-50 p-5 mx-auto">
-        <form method="POST" action="{{route('contact')}}">
+        <form method="POST" action="{{route('contact.post')}}">
             @csrf
             <div class="form-group">
                 <label for="email">Email Address</label>
