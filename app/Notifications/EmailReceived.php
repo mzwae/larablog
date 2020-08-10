@@ -41,9 +41,12 @@ class EmailReceived extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject('Your LaraBlog Payment Was Received')
+                    ->greeting("What's Up?")
                     ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('Id aute sint ullamco pariatur cillum elit do labore laboris velit et laborum magna ullamco..')
+                    ->action('Sign Up', url('/'))
+                    ->line('Thanks Buddy!');
     }
 
     /**
