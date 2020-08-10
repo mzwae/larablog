@@ -17,12 +17,10 @@ class NotifyController extends Controller
 
     public function store()
     {
-        request()->validate(['email' => 'required|email']);
-
         // Notification::send(request()->user(), new EmailReceived());
 
         request()->user()->notify(new EmailReceived);
 
-        return redirect(route('notify'))->with('message', 'Thank You. Your email has been sent!');
+        return redirect(route('notify'))->with('message', 'Thank You. Your email '. request()->user()->email .' has been sent!');
     }
 }
