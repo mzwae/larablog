@@ -27,6 +27,10 @@ Route::post('/contact', 'ContactController@store')->name('contact.post');
 Route::get('/notify', 'NotifyController@show')->name('notify');
 Route::post('/notify', 'NotifyController@store')->name('notify.post');
 
+
+Route::get('notifications', 'UserNotificationsController@show')->name('notifications.show');
+
+
 Route::get('/about', function () {
 
     $article = App\Article::take(3)->latest()->get();
