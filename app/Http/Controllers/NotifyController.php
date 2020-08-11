@@ -19,7 +19,7 @@ class NotifyController extends Controller
     {
         // Notification::send(request()->user(), new EmailReceived());
 
-        request()->user()->notify(new EmailReceived);
+        request()->user()->notify(new EmailReceived(1200));
 
         return redirect(route('notify'))->with('message', 'Thank You. Your email '. request()->user()->email .' has been sent!');
     }
