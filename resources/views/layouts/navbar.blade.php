@@ -31,6 +31,10 @@
                 <a class="nav-link" href="{{ route('notify') }}">Notify</a>
             </li>
 
+            <li class="nav-item {{ Request::is('notifications') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('notifications.show') }}">Notifications</a>
+            </li>
+
         </ul>
 
         <ul class="navbar-nav mr-right">
