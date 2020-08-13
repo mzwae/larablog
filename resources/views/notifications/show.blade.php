@@ -8,7 +8,11 @@
 
         <ul>
             @foreach($notifications as $notification)
-                <li>{{ $notification->type }}</li>
+                <li>
+                    @if ($notification->type === 'App\Notifications\EmailReceived')
+                        We have received an email from you, with reference {{ $notification->data['amount'] }}.
+                    @endif
+                </li>
             @endforeach
         </ul>
 
