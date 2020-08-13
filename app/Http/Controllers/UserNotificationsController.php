@@ -8,8 +8,15 @@ class UserNotificationsController extends Controller
 {
     public function show()
     {
+        $notifications = auth()->user()->unreadNotifications;
+
+        $readNotifications = auth()->user()->notifications;
+
+        $notifications->markAsRead();
+
         return view('notifications.show', [
-            'notifications' => auth()->user()->notifications
+            'notifications' => $notifications,
+            'readNotifications' => $readNotifications
         ]);
     }
 }
