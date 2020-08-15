@@ -1,88 +1,69 @@
 @extends('layouts.app')
 
-@section('head')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-@endsection
-
 @section('content')
-    <div id="wrapper">
-        <div id="page" class="container">
-            <h1 class="heading has-text-weight-bold is-size-4">New Article</h1>
-            <form action="/articles" method="post">
-                @csrf
-                <div class="field">
-                    <label for="title" class="lable">
-                        Title
-                    </label>
+<div id="wrapper">
+    <div id="page" class="container">
+        <h1 class="heading has-text-weight-bold is-size-4">New Article</h1>
+        <form action="/articles" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="title">
+                    Title
+                </label>
 
-                    <div class="control">
-                    <input type="text" class="input @error('title') is-danger @enderror" name="title" id="title" value="{{ old('title') }}">
+                <input type="text" class="form-control @error('title') is-danger @enderror" name="title" id="title" value="{{ old('title') }}">
 
-                        @error('title')
-                            <p class="help is-danger">{{ $errors->first('title') }}</p>
-                        @enderror
+                @error('title')
+                <p class="help is-danger">{{ $errors->first('title') }}</p>
+                @enderror
 
-                    </div>
-                </div>
+            </div>
 
-                <div class="field">
-                    <label for="excerpt" class="label">
-                        Excerpt
-                    </label>
+            <div class="form-group">
+                <label for="excerpt">
+                    Excerpt
+                </label>
 
-                    <div class="control">
-                        <textarea name="excerpt" id="excerpt" class="textarea @error('excerpt') is-danger @enderror">{{ old('excerpt')}}</textarea>
+                <textarea name="excerpt" id="excerpt" class="form-control @error('excerpt') is-danger @enderror">{{ old('excerpt')}}</textarea>
 
-                        @error('excerpt')
-                            <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
-                        @enderror
+                @error('excerpt')
+                <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                @enderror
 
-                    </div>
-                </div>
+            </div>
 
-                <div class="field">
-                    <label for="body" class="label">
-                        Body
-                    </label>
+            <div class="form-group">
+                <label for="body">
+                    Body
+                </label>
 
-                    <div class="control">
-                        <textarea name="body" id="body" class="textarea @error('body') is-danger @enderror">{{ old('body')}}</textarea>
+                <textarea name="body" id="body" class="form-control @error('body') is-danger @enderror">{{ old('body')}}</textarea>
 
-                        @error('body')
-                            <p class="help is-danger">{{ $errors->first('body') }}</p>
-                        @enderror
-                    </div>
-                </div>
+                @error('body')
+                <p class="help is-danger">{{ $errors->first('body') }}</p>
+                @enderror
+            </div>
 
-                <div class="field">
-                    <label for="tags" class="label">
-                        Tags
-                    </label>
+            <div class="form-group">
+                <label for="tags">
+                    Tags
+                </label>
 
-                    <div class="control select is-multiple">
+                <select multiple class="form-control" name="tags[]" multiple id="tags">
+                    @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                    @endforeach
+                </select>
 
-                        <select name="tags[]" multiple id="tags">
-                            @foreach ($tags as $tag)
-                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                            @endforeach
-                        </select>
+                @error('tags')
+                <p class="help is-danger">{{ $message }}</p>
+                @enderror
 
-                        @error('tags')
-                            <p class="help is-danger">{{ $message }}</p>
-                        @enderror
+            </div>
 
-                    </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
 
-                </div>
-
-                <div class="field is-grouped">
-
-                    <div class="control">
-                        <button class="button is-link" type="submit">Submit</button>
-                    </div>
-
-                </div>
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 @endsection
