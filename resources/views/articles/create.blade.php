@@ -4,7 +4,7 @@
 <div id="wrapper">
     <div id="page" class="container">
         <h1 class="heading has-text-weight-bold is-size-4">New Article</h1>
-        <form action="/articles" method="post">
+        <form action="{{ route('articles.post')}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="title">
