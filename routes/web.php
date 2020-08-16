@@ -42,7 +42,7 @@ Route::get('articles', 'ArticlesController@index')->name('articles.index');
 
 Route::post('articles', 'ArticlesController@store')->name('articles.post');
 
-Route::get('articles/create', 'ArticlesController@create')->name('articles.create');
+Route::get('articles/create', 'ArticlesController@create')->name('articles.create')->middleware('auth');
 
 Route::get('articles/{article}', 'ArticlesController@show')->name('articles.show');
 
