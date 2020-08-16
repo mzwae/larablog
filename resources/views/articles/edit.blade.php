@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('head')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-@endsection
-
 @section('content')
     <div id="wrapper">
         <div id="page" class="container">
