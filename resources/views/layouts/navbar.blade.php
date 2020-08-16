@@ -19,12 +19,9 @@
                 <a class="nav-link" href="{{ route('articles.index') }}">Articles</a>
             </li>
 
+            @auth
             <li class="nav-item {{ Request::is('create') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('articles.create') }}">Create Article</a>
-            </li>
-
-            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('contact') }}">Contact</a>
             </li>
 
             <li class="nav-item {{ Request::is('notify') ? 'active' : '' }}">
@@ -34,7 +31,11 @@
             <li class="nav-item {{ Request::is('notifications') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('notifications.show') }}">Notifications</a>
             </li>
+            @endauth
 
+            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+            </li>
         </ul>
 
         <ul class="navbar-nav mr-right">
