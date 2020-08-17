@@ -50,7 +50,8 @@ class ArticlesController extends Controller
 
         $article = new Article(request(['title', 'excerpt', 'body']));
 
-        $article->user_id = 2; // hardcode user_id for now...
+        $article->user_id = auth()->user()->id;
+
         $article->save();
 
         $article->tags()->attach(request('tags'));
