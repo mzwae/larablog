@@ -8,6 +8,7 @@
             <div class="title">
 
                 <h2>{{ $article->title }}</h2>
+                <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
                 <img src="/images/banner.jpg" alt="" class="image image-full" />
                 <p>
                     {{ $article->body }}
