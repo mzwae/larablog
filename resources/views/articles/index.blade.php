@@ -12,6 +12,7 @@
                                 {{ $article->title }}
                             </a>
                         </h2>
+                        <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
                     <p><img src="/images/banner.jpg" alt="" class="image image-full" /> </p>
                     {{ $article->excerpt }}
                 </div>
