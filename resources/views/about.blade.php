@@ -3,8 +3,8 @@
 @section('content')
 
 <div id="wrapper">
-    <div id="page" class="container">
-        <div id="content" class="col-md-8 col-xs-12">
+    <div id="page" class="container row">
+        <div id="content" class="col-12 col-md-8">
             <div class="title">
                 <h2>Welcome to our website</h2>
                 <span class="byline">Mauris vulputate dolor sit amet nibh</span>
@@ -14,19 +14,23 @@
             <p>Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. Fusce odio. Etiam arcu dui, faucibus eget, placerat vel, sodales eget, orci. Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis at, ultricies quis, justo. Donec nonummy magna quis risus. Quisque eleifend. Phasellus tempor vehicula justo.</p>
             <p>Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. Fusce odio. Etiam arcu dui, faucibus eget, placerat vel, sodales eget, orci. Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis at, ultricies quis, justo. Donec nonummy magna quis risus. Quisque eleifend. Phasellus tempor vehicula justo.</p>
         </div>
-        <div id="sidebar" class="col-md-4 col-xs-12">
+        <div class="col-12 col-md-4">
+
             <ul class="style1">
                 @foreach($articles as $article)
-                <li class="first">
-                    <h3>
-                        <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
-                    </h3>
-                    <p>{{ $article->excerpt }}</p>
-                </li>
+                <div class="row ml-2">
+                    <li class="first">
+                        <h3>
+                            <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
+                        </h3>
+                        <p>{{ $article->excerpt }}</p>
+                    </li>
+                </div>
                 @endforeach
             </ul>
+
             <div id="stwo-col" class="row">
-                <div class="col-md-6">
+                <div class="col-6">
                     <h2>Etiam rhoncus</h2>
                     <ul class="style2">
                         <li><a href="#">Semper quis egetmi dolore</a></li>
@@ -35,7 +39,7 @@
                         <li><a href="#">Quam turpis feugiat dolor</a></li>
                     </ul>
                 </div>
-                <div class="col-md-6">
+                <div class="col-6">
                     <h2>Integer gravida</h2>
                     <ul class="style2">
                         <li><a href="#">Semper quis egetmi dolore</a></li>
