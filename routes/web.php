@@ -48,6 +48,8 @@ Route::get('articles/{article}', 'ArticlesController@show')->name('articles.show
 
 Route::get('articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
 
+Route::delete('articles/{article}', 'ArticlesController@destroy')->name('articles.delete');
+
 Route::put('articles/{article}', 'ArticlesController@update');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user.logout');
