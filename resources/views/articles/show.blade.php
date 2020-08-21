@@ -19,7 +19,7 @@
 
         @auth
         <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">Edit</a>
-        <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-danger">Delete</a>
+        <a href="{{ route('articles.delete', ['article' => $article->id]) }}" class="btn btn-danger">Delete</a>
         @endauth
     </div>
 </div>
