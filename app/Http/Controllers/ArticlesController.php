@@ -82,9 +82,13 @@ class ArticlesController extends Controller
     /**
      * Delete an article
      */
-    public function destroy()
+    public function destroy(Article $article)
     {
+        // ddd($article->id);
 
+        Article::destroy($article->id);
+
+        return redirect(route('articles.index'))->with('message', 'Article deleted successfully.');
     }
 
     /**
