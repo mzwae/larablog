@@ -4,19 +4,24 @@
 
 <div id="wrapper">
     <div id="page" class="container">
+        @if(session('message'))
+        <div class="alert alert-success mt-5" role="alert">
+            {{ session('message') }}
+        </div>
+        @endif
         @forelse($articles as $article)
-      <div class="row">
-      <div class="col-sm-12 mt-5">
-        <h2>
-            <a href="/articles/{{ $article->id }}">
-                {{ $article->title }}
-            </a>
-        </h2>
-        <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
-        <p><img src="/images/banner.jpg" alt="" class="image image-full" /> </p>
-        {{ $article->excerpt }}
-      </div>
-      </div>
+        <div class="row">
+            <div class="col-sm-12 mt-5">
+                <h2>
+                    <a href="/articles/{{ $article->id }}">
+                        {{ $article->title }}
+                    </a>
+                </h2>
+                <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
+                <p><img src="/images/banner.jpg" alt="" class="image image-full" /> </p>
+                {{ $article->excerpt }}
+            </div>
+        </div>
         @empty
         <h3>No relelvent articles yet.</h3>
         @endforelse
