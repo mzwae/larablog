@@ -20,7 +20,9 @@
         <hr>
 
         @auth
-            <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">Edit</a>
+            <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">
+                <i class="fas fa-edit"> Edit</i>
+            </a>
             {{-- <a href="{{ route('articles.delete', ['article' => $article->id]) }}" class="btn btn-danger">Delete</a> --}}
             <a data-toggle="modal" data-target="#deleteModal" title="Delete Article" type="button" class="btn btn-danger">
                 <i class="fas fa-trash-alt"> Delete</i>
