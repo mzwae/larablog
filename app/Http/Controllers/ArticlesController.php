@@ -84,7 +84,6 @@ class ArticlesController extends Controller
      */
     public function destroy(Article $article)
     {
-        // ddd($article->id);
 
         Article::destroy($article->id);
 
