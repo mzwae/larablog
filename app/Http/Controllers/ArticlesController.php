@@ -99,7 +99,7 @@ class ArticlesController extends Controller
             'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required',
-            'tags' => 'exists:tags,id'
+            'tags' => 'exists:tags,id',
         ]);
     }
 }
