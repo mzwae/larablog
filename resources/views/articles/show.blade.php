@@ -20,12 +20,12 @@
         <hr>
 
         @auth
-            <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">
-                <i class="fas fa-edit"> Edit</i>
-            </a>
-            <a data-toggle="modal" data-target="#deleteModal" title="Delete Article" type="button" class="btn btn-danger ml-5">
-                <i class="fas fa-trash-alt"> Delete</i>
-            </a>
+        <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">
+            <i class="fas fa-edit"> Edit</i>
+        </a>
+        <a data-toggle="modal" data-target="#deleteModal" title="Delete Article" type="button" class="btn btn-danger ml-5">
+            <i class="fas fa-trash-alt"> Delete</i>
+        </a>
         @endauth
     </div>
 </div>
