@@ -5,7 +5,7 @@
 <div id="wrapper">
     <div id="page" class="container row">
         <div id="content" class="col-12 col-md-8">
-            <div class="title">
+            <div class="jumbotron">
                 <h2>Welcome to our website</h2>
                 <span class="byline">Mauris vulputate dolor sit amet nibh</span>
             </div>
