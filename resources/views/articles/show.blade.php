@@ -7,7 +7,7 @@
 
         <h2>{{ $article->title }}</h2>
         <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
-        <img src="/images/banner.jpg" alt="" class="image image-full" />
+        <img src="/images/banner.jpg" alt="" class="img-thumbnail d-block"/>
         <p>
             {{ $article->body }}
         </p>
