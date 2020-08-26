@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Tag;
+use App\User;
 
 class ArticlesController extends Controller
 {
@@ -13,7 +14,11 @@ class ArticlesController extends Controller
      */
     public function show(Article $article)
     {
-        return view('articles.show', ['article' => $article]);
+        $comments = $article->comments;
+
+        $user = new User;
+
+        return view('articles.show', ['article' => $article, 'comments' => $comments, 'user' => $user]);
     }
 
     /**
