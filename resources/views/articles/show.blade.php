@@ -30,6 +30,8 @@
     </div>
 </div>
 
+@include('layouts.partials.comment')
+
 @include('layouts.deletemodal', ['id' => $article->id])
 
 @endsection
