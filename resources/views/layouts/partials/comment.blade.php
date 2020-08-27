@@ -3,7 +3,8 @@
 <div class="row d-flex justify-content-center mt-100 mb-100">
     <div class="col-lg-6">
         @auth
-        <form action="" class="mb-3">
+    <form method="post" action="{{ route('comment.store') }}" class="mb-3">
+        @csrf
             <div class="form-group">
                 <div class="form-group">
                     <label for="comment"></label>
