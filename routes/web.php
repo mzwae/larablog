@@ -52,4 +52,7 @@ Route::delete('articles/{article}', 'ArticlesController@destroy')->name('article
 
 Route::put('articles/{article}', 'ArticlesController@update');
 
+
+Route::post('comment', 'ArticlesController@storeComment')->name('comment.store');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user.logout');
