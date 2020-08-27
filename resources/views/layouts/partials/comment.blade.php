@@ -1,13 +1,8 @@
 <hr>
 
-<div class="row">
-    <div class="col-lg-6">
-
-    </div>
-</div>
-
 <div class="row d-flex justify-content-center mt-100 mb-100">
     <div class="col-lg-6">
+        @auth
         <form action="" class="mb-3">
             <div class="form-group">
                 <div class="form-group">
@@ -17,6 +12,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        @endauth
         <div class="card">
             <div class="card-body text-center">
                 <h4 class="card-title">Latest Comments</h4>
