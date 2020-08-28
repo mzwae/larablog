@@ -70,7 +70,7 @@ class ArticlesController extends Controller
 
     public function edit(Article $article)
     {
-        return view('articles.edit', ['article' => $article]);
+        return view('articles.edit', ['article' => $article, 'tags' => Tag::all()]);
     }
 
     /**
@@ -79,7 +79,10 @@ class ArticlesController extends Controller
 
     public function update(Article $article)
     {
-        $article->update($this->validateArticle());
+
+        $article->update(request(['title', 'excerpt', 'body']));
+
+        $article->tags()->attach(request('tags'));
 
         return redirect($article->path());
     }
@@ -106,5 +109,13 @@ class ArticlesController extends Controller
             'body' => 'required',
             'tags' => 'exists:tags,id',
         ]);
+    }
+
+    /**
+     * Add a new comment
+     */
+    public function storeComment()
+    {
+        ddd(request()->all());
     }
 }
