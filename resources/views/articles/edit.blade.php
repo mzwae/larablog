@@ -31,6 +31,12 @@
                 <textarea name="body" id="excerpt" cols="30" rows="10" class="form-control">{{ $article->body }}</textarea>
             </div>
 
+            <p class="mt-4"> Previously selected tags:
+                @foreach($article->tags as $tag)
+                <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
+                @endforeach
+            </p>
+
             <div class="form-group">
                 <label for="tags">
                     Tags
