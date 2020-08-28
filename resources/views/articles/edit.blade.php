@@ -31,6 +31,23 @@
                 <textarea name="body" id="excerpt" cols="30" rows="10" class="form-control">{{ $article->body }}</textarea>
             </div>
 
+            <div class="form-group">
+                <label for="tags">
+                    Tags
+                </label>
+
+                <select multiple class="form-control" name="tags[]" multiple id="tags">
+                    @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+
+                @error('tags')
+                <p class="help is-danger">{{ $message }}</p>
+                @enderror
+
+            </div>
+
             <button class="btn btn-primary" type="submit">Submit</button>
 
     </div>
