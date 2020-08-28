@@ -37,7 +37,7 @@
                     Body
                 </label>
 
-                <textarea name="body" id="body" class="form-control @error('body') is-danger @enderror">{{ old('body')}}</textarea>
+                <textarea name="body" id="body" rows="7" class="form-control @error('body') is-danger @enderror">{{ old('body')}}</textarea>
 
                 @error('body')
                 <p class="help is-danger">{{ $errors->first('body') }}</p>
