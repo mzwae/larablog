@@ -2,11 +2,15 @@
 
 namespace App;
 
+use Actuallymab\LaravelComment\Contracts\Commentable;
 use Illuminate\Database\Eloquent\Model;
+use Actuallymab\LaravelComment\HasComments;
 
-class Article extends Model
+class Article extends Model implements Commentable
 {
     // protected $fillable = ['title', 'excerpt', 'body'];
+
+    use HasComments;
 
     protected $guarded = [];
 
@@ -25,4 +29,11 @@ class Article extends Model
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
+
+    public function canBeRated(): bool
+    {
+        return true; // default false
+    }
+
+
 }
