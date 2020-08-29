@@ -120,6 +120,6 @@ class ArticlesController extends Controller
 
         $user->comment($article, request()->comment, 3);
 
-        return redirect($article->path());
+        return redirect($article->path())->with('message', 'Your comment has been added successfully.');
     }
 }
