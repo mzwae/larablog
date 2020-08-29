@@ -114,8 +114,12 @@ class ArticlesController extends Controller
     /**
      * Add a new comment
      */
-    public function storeComment()
+    public function storeComment(Article $article)
     {
-        ddd(request()->all());
+        $user = auth()->user();
+
+        $user->comment($article, request()->comment, 3);
+
+        return redirect($article->path());
     }
 }
