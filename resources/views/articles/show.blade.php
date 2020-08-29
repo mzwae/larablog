@@ -5,6 +5,17 @@
 <div id="wrapper">
     <div id="page" class="container">
 
+        {{-- Notify user about the newly added comment --}}
+        @if(session('message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <strong>Success!</strong> {{ session('message') }}
+        </div>
+        @endif
+
         <h2>{{ $article->title }}</h2>
         <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
         <img src="/images/banner.jpg" alt="" class="img-thumbnail d-block"/>
