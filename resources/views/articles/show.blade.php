@@ -18,7 +18,7 @@
 
         <h2>{{ $article->title }}</h2>
         <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
-        <img src="/images/banner.jpg" alt="" class="img-thumbnail d-block"/>
+        <img src="/images/banner.jpg" alt="" class="img-thumbnail d-block mt-5 mb-5"/>
         <p>
             {{ $article->body }}
         </p>
@@ -34,7 +34,7 @@
         <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">
             <i class="fas fa-edit"> Edit</i>
         </a>
-        <a data-toggle="modal" data-target="#deleteModal" title="Delete Article" type="button" class="btn btn-danger ml-5">
+        <a data-toggle="modal" data-target="#deleteModal" title="Delete Article" type="button" class="btn btn-danger mt-5 mb-5">
             <i class="fas fa-trash-alt"> Delete</i>
         </a>
         @endauth
