@@ -20,7 +20,7 @@
         <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
         <img src="/images/banner.jpg" alt="" class="img-thumbnail d-block mt-5 mb-5"/>
         <p>
-            {{ $article->body }}
+            {!! $article->body !!}
         </p>
         <p class="mt-4">
             @foreach($article->tags as $tag)
