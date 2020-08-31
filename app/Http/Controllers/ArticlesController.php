@@ -14,7 +14,7 @@ class ArticlesController extends Controller
      */
     public function show(Article $article)
     {
-        $comments = $article->comments;
+        $comments = $article->comments()->latest()->get();
 
         $user = new User;
 
