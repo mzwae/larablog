@@ -12,4 +12,6 @@
 <link href="/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
+<script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+
 @yield('head')
