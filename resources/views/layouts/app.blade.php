@@ -25,5 +25,12 @@ Released   : 20140225
             <p>&copy; MZ Apps. All rights reserved.</p>
         </div>
 
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
     </body>
 </html>
