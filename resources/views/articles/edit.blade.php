@@ -20,7 +20,7 @@
                     Excerpt
                 </label>
 
-                <textarea name="excerpt" id="excerpt" cols="30" rows="10" class="form-control">{{ $article->excerpt }}</textarea>
+                <textarea name="excerpt" id="" cols="30" rows="10" class="form-control">{{ $article->excerpt }}</textarea>
             </div>
 
             <div class="form-group">
@@ -28,7 +28,7 @@
                     Body
                 </label>
 
-                <textarea name="body" id="excerpt" cols="30" rows="10" class="form-control">{{ $article->body }}</textarea>
+                <textarea name="body" id="editor" cols="30" rows="10" class="form-control">{!! $article->body !!}</textarea>
             </div>
 
             <p class="mt-4"> Previously selected tags:
