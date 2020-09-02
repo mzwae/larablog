@@ -38,10 +38,10 @@
             <i class="fas fa-trash-alt"> Delete</i>
         </a>
         @endauth
+        @include('layouts.partials.comment')
     </div>
 </div>
 
-@include('layouts.partials.comment')
 
 @include('layouts.deletemodal', ['id' => $article->id])
 
