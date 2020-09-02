@@ -1,4 +1,3 @@
-<hr>
 
 <div class="row d-flex justify-content-center mt-100 mb-100">
     <div class="col-lg-6">
