@@ -15,7 +15,11 @@
         @endauth
         <div class="card">
             <div class="card-body text-center">
+                @if(count($comments) > 0)
                 <h4 class="card-title">Latest Comments</h4>
+                @else
+                <h4 class="card-title">Be the first to comment &#128522;</h4>
+                @endif
             </div>
             <div class="comment-widgets">
                 <!-- Comment Row -->
