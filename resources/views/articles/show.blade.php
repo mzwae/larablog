@@ -30,16 +30,18 @@
 
         <hr>
 
+        @auth
         @if(Auth::user()->id === $article->author->id)
-            <div class="m-5">
-                <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">
-                    <i class="fas fa-edit"> Edit</i>
-                </a>
-                <a data-toggle="modal" data-target="#deleteModal" title="Delete Article" type="button" class="btn btn-danger pull-right">
-                    <i class="fas fa-trash-alt"> Delete</i>
-                </a>
-            </div>
+        <div class="m-5">
+            <a href="{{ route('articles.edit', ['article' => $article->id]) }}" class="btn btn-info">
+                <i class="fas fa-edit"> Edit</i>
+            </a>
+            <a data-toggle="modal" data-target="#deleteModal" title="Delete Article" type="button" class="btn btn-danger pull-right">
+                <i class="fas fa-trash-alt"> Delete</i>
+            </a>
+        </div>
         @endif
+        @endauth
 
         @include('layouts.partials.comment')
 
