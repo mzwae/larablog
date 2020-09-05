@@ -90,7 +90,7 @@ class ArticlesController extends Controller
 
         $article->tags()->attach(request('tags'));
 
-        return redirect($article->path());
+        return redirect($article->path())->with("message", "Article updated successfully!");
     }
 
     /**
