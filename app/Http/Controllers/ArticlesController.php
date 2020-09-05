@@ -70,7 +70,13 @@ class ArticlesController extends Controller
 
     public function edit(Article $article)
     {
-        return view('articles.edit', ['article' => $article, 'tags' => Tag::all()]);
+        // ddd($article->user_id);
+        if ($article->user_id === auth()->user()->id) {
+            return view('articles.edit', ['article' => $article, 'tags' => Tag::all()]);
+        } else {
+           return redirect()->back()->with("warning", "You can edit your articles only!");
+        }
+
     }
 
     /**
