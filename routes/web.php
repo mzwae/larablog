@@ -40,7 +40,7 @@ Route::get('/about', function () {
 
 Route::get('articles', 'ArticlesController@index')->name('articles.index');
 
-Route::post('articles', 'ArticlesController@store')->name('articles.post');
+Route::post('articles', 'ArticlesController@store')->name('articles.post')->middleware('auth');
 
 Route::get('articles/create', 'ArticlesController@create')->name('articles.create')->middleware('auth');
 
