@@ -46,13 +46,13 @@ Route::get('articles/create', 'ArticlesController@create')->name('articles.creat
 
 Route::get('articles/{article}', 'ArticlesController@show')->name('articles.show');
 
-Route::get('articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
+Route::get('articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit')->middleware('auth');
 
-Route::delete('articles/{article}', 'ArticlesController@destroy')->name('articles.delete');
+Route::delete('articles/{article}', 'ArticlesController@destroy')->name('articles.delete')->middleware('auth');
 
-Route::put('articles/{article}', 'ArticlesController@update');
+Route::put('articles/{article}', 'ArticlesController@update')->middleware('auth');
 
 
-Route::post('articles/{article}/comment', 'ArticlesController@storeComment')->name('comment.store');
+Route::post('articles/{article}/comment', 'ArticlesController@storeComment')->name('comment.store')->middleware('auth');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user.logout');
