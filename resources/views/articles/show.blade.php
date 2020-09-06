@@ -12,22 +12,28 @@
                 <span aria-hidden="true">&times;</span>
                 <span class="sr-only">Close</span>
             </button>
-             <strong>Success: </strong>{{ session('message') }}
+            <strong>Success: </strong>{{ session('message') }}
         </div>
         @endif
 
+
+
+        {{-- Notify user editing articles only for authors only --}}
         @if(session('warning'))
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 <span class="sr-only">Close</span>
             </button>
-             <strong>Warning: </strong>{{ session('warning') }}
+            <strong>Warning: </strong>{{ session('warning') }}
         </div>
         @endif
+        {{-- notifications end --}}
+
+
 
         <h2>{{ $article->title }}</h2>
-        <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
+    <small>Written by {{ $article->author->name }} on {{$article->created_at}} - {{count($article->comments)}} comments</small>
         <img src="/images/banner.jpg" alt="" class="img-thumbnail d-block mt-5 mb-5" />
         <p>
             {!! $article->body !!}
