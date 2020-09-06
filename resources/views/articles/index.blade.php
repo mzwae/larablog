@@ -17,7 +17,7 @@
                         {{ $article->title }}
                     </a>
                 </h2>
-                <small>Written by {{ $article->author->name }} on {{$article->created_at}}</small>
+                <small>Written by {{ $article->author->name }} on {{ $article->created_at }} - {{ count($article->comments) }} comments</small>
                 <p><img src="/images/banner.jpg" alt="" class="img-thumbnail" /> </p>
                 {{ $article->excerpt }}
             </div>
