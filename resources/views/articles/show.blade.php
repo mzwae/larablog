@@ -33,7 +33,7 @@
 
 
         <h2>{{ $article->title }}</h2>
-    <small>Written by {{ $article->author->name }} on {{$article->created_at}} - {{count($article->comments)}} comments</small>
+    <small>Written by {{ $article->author->name }} on {{ $article->created_at }} - {{ count($article->comments) }} comments</small>
         <img src="/images/banner.jpg" alt="" class="img-thumbnail d-block mt-5 mb-5" />
         <p>
             {!! $article->body !!}
