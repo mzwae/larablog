@@ -66,4 +66,11 @@ class User extends Authenticatable
     {
         return $this->phone_number;
     }
+
+    public function getAvatarAttribute()
+    {
+        // dd($this->name);
+        // return "https://i.pravatar.cc/200?u=" . $this->email;
+        return "https://robohash.org/" . $this->name;
+    }
 }
