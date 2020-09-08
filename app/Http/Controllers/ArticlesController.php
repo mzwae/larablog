@@ -122,9 +122,11 @@ class ArticlesController extends Controller
      */
     public function storeComment(Article $article)
     {
+        // ddd($article);
+        // ddd(request()->all());
         $user = auth()->user();
 
-        $user->comment($article, request()->comment, 3);
+        $user->comment($article, request()->comment, request()->rating);
 
         return redirect($article->path())->with('message', 'Your comment has been added successfully.');
     }
