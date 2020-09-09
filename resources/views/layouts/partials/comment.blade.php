@@ -40,13 +40,15 @@
                         <img src="{{$user->find($comment->commented_id)->avatar}}?set=set2" alt="profile image" class="rounded-circle mr-2" width="50" height="50">
                     </div>
                     <div class="w-100">
-                        <h5>{{ $user->find($comment->commented_id)->name }}</h5>
-                        <small class="text-muted float-right">{{ $comment->created_at }}</small>
+                        <h5>{{ $user->find($comment->commented_id)->name }} <small class="text-muted float-right">{{ $comment->created_at }}</small></h5>
+
                         <p>{{ $comment->comment }}</p>
-                        <p>Rate: {{ $comment->rate }} out of 5</p>
 
                         @for($i = $comment->rate; $i > 0; $i--)
-                        <span class="fa fa-star checked text-success"></span>
+                        <span class="fa fa-star text-success"></span>
+                        @endfor
+                        @for($i = 5-$comment->rate; $i > 0; $i--)
+                        <span class="fa fa-star"></span>
                         @endfor
 
                     </div>
