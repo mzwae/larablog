@@ -32,27 +32,26 @@
                 <h4 class="card-title">Be the first to comment &#128522;</h4>
                 @endif
             </div>
-            <div class="comment-widgets">
+            <div class="m-3">
                 <!-- Comment Row -->
                 @foreach ($comments as $comment)
-                <div class="d-flex flex-row comment-row m-t-0">
+                <div class="d-flex">
                     <div class="p-2">
-                        <img src="{{$user->find($comment->commented_id)->avatar}}?set=set2" alt="img" class="rounded-circle mr-2" width="50" height="50">
+                        <img src="{{$user->find($comment->commented_id)->avatar}}?set=set2" alt="profile image" class="rounded-circle mr-2" width="50" height="50">
                     </div>
-                    <div class="comment-text w-100">
-                        <h6 class="font-medium">{{ $user->find($comment->commented_id)->name }}</h6>
-                        <span class="m-b-15 d-block">{{ $comment->comment }}</span>
-                        <span class="d-block">Rate: {{ $comment->rate }} out of 5</span>
+                    <div class="w-100">
+                        <h5>{{ $user->find($comment->commented_id)->name }}</h5>
+                        <small class="text-muted float-right">{{ $comment->created_at }}</small>
+                        <p>{{ $comment->comment }}</p>
+                        <p>Rate: {{ $comment->rate }} out of 5</p>
 
                         @for($i = $comment->rate; $i > 0; $i--)
                         <span class="fa fa-star checked text-success"></span>
                         @endfor
 
-                        <div class="comment-footer">
-                            <span class="text-muted float-right">{{ $comment->created_at }}</span>
-                        </div>
                     </div>
                 </div>
+                <hr>
                 @endforeach
 
             </div> <!-- Card -->
