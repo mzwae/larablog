@@ -17,7 +17,17 @@
                         {{ $article->title }}
                     </a>
                 </h2>
-                <small>Written by {{ $article->author->name }} on {{ $article->created_at }} - {{ count($article->comments) }} comments</small>
+                <small class="pr-5">Written by {{ $article->author->name }} on {{ $article->created_at }} - {{ count($article->comments) }} comments</small>
+
+                {{-- Article Rating stars --}}
+                @for($i = round($article->averageRate()); $i > 0; $i--)
+                <span class="fa fa-star text-success"></span>
+                @endfor
+                @for($i = 5-round($article->averageRate()); $i > 0; $i--)
+                <span class="fa fa-star"></span>
+                @endfor
+                {{-- Article rating stars end --}}
+
                 <p><img src="/images/banner.jpg" alt="" class="img-thumbnail" /> </p>
                 {{ $article->excerpt }}
             </div>
