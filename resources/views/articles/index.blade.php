@@ -23,7 +23,7 @@
                 @for($i = round($article->averageRate()); $i > 0; $i--)
                 <span class="fa fa-star text-success"></span>
                 @endfor
-                @for($i = 5-round($article->averageRate()); $i > 0; $i--)
+                @for($i = 5 - round($article->averageRate()); $i > 0; $i--)
                 <span class="fa fa-star"></span>
                 @endfor
                 {{-- Article rating stars end --}}
