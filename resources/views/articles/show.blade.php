@@ -33,7 +33,7 @@
 
 
         <h2>{{ $article->title }}</h2>
-        <small class="pr-5">Written by {{ $article->author->name }} on {{ $article->created_at }} has {{ $article->totalCommentsCount() }} comments</small>
+        <small class="pr-5">Written by {{ $article->author->name }} on {{ $article->created_at }} <span class="badge badge-success badge-pill">{{ $article->totalCommentsCount() }} comments</span></small>
 
         {{-- Article Rating stars --}}
         @for($i = round($article->averageRate()); $i > 0; $i--)
