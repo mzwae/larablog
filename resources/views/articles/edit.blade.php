@@ -33,7 +33,9 @@
 
             <p class="mt-4"> Previously selected tags:
                 @foreach($article->tags as $tag)
-                <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
+                <a class="badge badge-danger badge-pill" href="{{ route('articles.index', ['tag' => $tag->name]) }}">
+                    {{ $tag->name }}
+                </a>
                 @endforeach
             </p>
 
