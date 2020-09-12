@@ -17,7 +17,8 @@
                         {{ $article->title }}
                     </a>
                 </h2>
-                <small class="pr-5">Written by {{ $article->author->name }} on {{ $article->created_at }} - {{ $article->totalCommentsCount() }} comments</small>
+                <small class="pr-5">Written by {{ $article->author->name }} on {{ $article->created_at }} </small>
+                <span class="badge badge-success badge-pill">{{ $article->totalCommentsCount() }} comments</span>
 
                 {{-- Article Rating stars --}}
                 @for($i = round($article->averageRate()); $i > 0; $i--)
