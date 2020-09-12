@@ -17,7 +17,9 @@
                         {{ $article->title }}
                     </a>
                 </h2>
-                <small class="pr-5">Written by {{ $article->author->name }} on {{ $article->created_at }} </small>
+            <div class="pb-3">
+                    Written by {{ $article->author->name }} on {{ $article->created_at }}
+
                 <span class="badge badge-success badge-pill">{{ $article->totalCommentsCount() }} comments</span>
 
                 {{-- Article Rating stars --}}
@@ -28,7 +30,7 @@
                 <span class="fa fa-star"></span>
                 @endfor
                 {{-- Article rating stars end --}}
-
+            </div>
                 <p><img src="/images/banner.jpg" alt="" class="img-thumbnail" /> </p>
                 {{ $article->excerpt }}
             </div>
