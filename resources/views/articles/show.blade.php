@@ -50,7 +50,7 @@
         </p>
         <p class="mt-4">
             @foreach($article->tags as $tag)
-            <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
+            <a href="{{ route('articles.index', ['tag' => $tag->name]) }}"><span class="badge badge-primary">{{ $tag->name }}</span></a>
             @endforeach
         </p>
 
