@@ -52,6 +52,9 @@ Route::delete('articles/{article}', 'ArticlesController@destroy')->name('article
 
 Route::put('articles/{article}', 'ArticlesController@update')->middleware('auth');
 
+Route::get('articles/{article}/removetag/{tag}', 'ArticlesController@removeTag')->name('articles.removeTag')->middleware('auth');
+
+
 
 Route::post('articles/{article}/comment', 'ArticlesController@storeComment')->name('comment.store')->middleware('auth');
 
