@@ -80,6 +80,15 @@ class ArticlesController extends Controller
     }
 
     /**
+     * Remove tag from an article
+     */
+    public function removeTag(Article $article)
+    {
+        $article->tags()->detach(request('tag'));
+        return redirect()->back();
+    }
+
+    /**
      * Persist the edited article
      */
 
