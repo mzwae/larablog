@@ -33,8 +33,8 @@
 
             <p class="mt-4"> Previously selected tags:
                 @foreach($article->tags as $tag)
-                <a class="badge badge-danger badge-pill" href="{{ route('articles.removeTag', ['tag' => $tag, 'article' => $article]) }}">
-                    {{ $tag->name }}
+                <a class="badge badge-danger badge-pill" data-toggle="tooltip" title="Click to remove tag" href="{{ route('articles.removeTag', ['tag' => $tag, 'article' => $article]) }}">
+                    {{ $tag->name }} [&times;]
                 </a>
                 @endforeach
             </p>
