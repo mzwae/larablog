@@ -17,20 +17,20 @@
                         {{ $article->title }}
                     </a>
                 </h2>
-            <div class="pb-3">
+                <div class="pb-3">
                     Written by {{ $article->author->name }} on {{ $article->created_at }}
 
-                <span class="badge badge-success badge-pill">{{ $article->totalCommentsCount() }} comments</span>
+                    <span class="badge badge-success badge-pill">{{ $article->totalCommentsCount() }} comments</span>
 
-                {{-- Article Rating stars --}}
-                @for($i = round($article->averageRate()); $i > 0; $i--)
-                <span class="fa fa-star text-success"></span>
-                @endfor
-                @for($i = 5 - round($article->averageRate()); $i > 0; $i--)
-                <span class="fa fa-star"></span>
-                @endfor
-                {{-- Article rating stars end --}}
-            </div>
+                    {{-- Article Rating stars --}}
+                    @for($i = round($article->averageRate()); $i > 0; $i--)
+                    <span class="fa fa-star text-success"></span>
+                    @endfor
+                    @for($i = 5 - round($article->averageRate()); $i > 0; $i--)
+                    <span class="fa fa-star"></span>
+                    @endfor
+                    {{-- Article rating stars end --}}
+                </div>
                 <p><img src="/images/banner.jpg" alt="" class="img-thumbnail" /> </p>
                 {{ $article->excerpt }}
             </div>
