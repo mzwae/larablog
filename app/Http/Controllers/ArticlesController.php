@@ -94,10 +94,34 @@ class ArticlesController extends Controller
 
     public function update(Article $article)
     {
+        // ddd(Tag::all());
+        // ddd($article->tags);
+        // ddd(request('tags'));
+
+        $tags_ids = [];
+        $articleTags_ids = [];
+        $tags = Tag::all();
+        $articleTags = $article->tags;
+
+        foreach ($tags as $tag) {
+            array_push($tags_ids, $tag->id);
+        }
+        foreach ($articleTags as $tag) {
+            array_push($articleTags_ids, $tag->id);
+        }
+
+        $tags_array = request('tags');
+
+        foreach ($tags_array as $articleTag) {
+
+            if (!in_array($articleTag, $articleTags_ids)) {
+
+                $article->tags()->attach(request('tags'));
+            }
+        }
 
         $article->update(request(['title', 'excerpt', 'body']));
 
-        $article->tags()->attach(request('tags'));
 
         return redirect($article->path())->with("message", "Article updated successfully!");
     }
