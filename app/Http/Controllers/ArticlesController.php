@@ -74,7 +74,7 @@ class ArticlesController extends Controller
         if ($article->user_id === auth()->user()->id) {
             return view('articles.edit', ['article' => $article, 'tags' => Tag::all()]);
         } else {
-           return redirect()->back()->with("warning", "You can edit your articles only!");
+            return redirect()->back()->with("warning", "You can edit your articles only!");
         }
 
     }
@@ -94,34 +94,24 @@ class ArticlesController extends Controller
 
     public function update(Article $article)
     {
-        // ddd(Tag::all());
-        // ddd($article->tags);
-        // ddd(request('tags'));
+        $currentArticleTags_ids = [];
+        $currentArticleTags = $article->tags;
 
-        $tags_ids = [];
-        $articleTags_ids = [];
-        $tags = Tag::all();
-        $articleTags = $article->tags;
-
-        foreach ($tags as $tag) {
-            array_push($tags_ids, $tag->id);
-        }
-        foreach ($articleTags as $tag) {
-            array_push($articleTags_ids, $tag->id);
+        foreach ($currentArticleTags as $tag) {
+            array_push($currentArticleTags_ids, $tag->id);
         }
 
-        $tags_array = request('tags');
+        $request_tags_ids = request('tags');
 
-        foreach ($tags_array as $articleTag) {
+        foreach ($request_tags_ids as $tag) {
 
-            if (!in_array($articleTag, $articleTags_ids)) {
+            if (!in_array($tag, $currentArticleTags_ids)) {
 
-                $article->tags()->attach(request('tags'));
+                $article->tags()->attach($tag);
             }
         }
 
         $article->update(request(['title', 'excerpt', 'body']));
-
 
         return redirect($article->path())->with("message", "Article updated successfully!");
     }
