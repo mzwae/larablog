@@ -21,9 +21,9 @@
                         </p>
                         <p class="card-text">
                             <small class="text-muted">
-                                <i class="fas fa-comment"></i>{{ $article->totalCommentsCount() }}
-                                <i class="far fa-user pl-2"></i>{{ $article->author->name }}
-                                <i class="fas fa-calendar-alt pl-2"></i>  {{ $article->created_at->diffForHumans() }}
+                                <i class="fas fa-comment"> {{ $article->totalCommentsCount() }}</i>
+                                <i class="far fa-user pl-2"> {{ $article->author->name }}</i>
+                                <i class="fas fa-calendar-alt pl-2"> {{ $article->created_at->diffForHumans() }}</i>
 
                                 {{-- Article rating --}}
                                 @for($i = round($article->averageRate()); $i > 0; $i--)
