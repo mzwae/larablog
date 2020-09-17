@@ -9,36 +9,40 @@
             {{ session('message') }}
         </div>
         @endif
+        <div class="card-columns">
         @forelse($articles as $article)
-        <div class="row">
-            <div class="col-sm-12 mt-5">
-                <h2>
-                    <a href="/articles/{{ $article->id }}">
-                        {{ $article->title }}
-                    </a>
-                </h2>
-                <div class="pb-3">
-                    Written by {{ $article->author->name }} on {{ $article->created_at }}
+            <div class="card">
+                <a href="/articles/{{ $article->id }}">
+                    <img class="card-img-top" src="/images/banner.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$article->title}}</h5>
+                        <p class="card-text">
+                            {{ $article->excerpt }}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <i class="fas fa-comment"></i>{{ $article->totalCommentsCount() }}
+                                <i class="far fa-user pl-2"></i>{{ $article->author->name }}
+                                <i class="fas fa-calendar-alt pl-2"></i>  {{ $article->created_at->diffForHumans() }}
 
-                    <span class="badge badge-success badge-pill">{{ $article->totalCommentsCount() }} comments</span>
-
-                    {{-- Article Rating stars --}}
-                    @for($i = round($article->averageRate()); $i > 0; $i--)
-                    <span class="fa fa-star text-success"></span>
-                    @endfor
-                    @for($i = 5 - round($article->averageRate()); $i > 0; $i--)
-                    <span class="fa fa-star"></span>
-                    @endfor
-                    {{-- Article rating stars end --}}
-                </div>
-                <p><img src="/images/banner.jpg" alt="" class="img-thumbnail" /> </p>
-                {{ $article->excerpt }}
+                                {{-- Article rating --}}
+                                @for($i = round($article->averageRate()); $i > 0; $i--)
+                                <span class="fa fa-star text-success"></span>
+                                @endfor
+                                @for($i = 5 - round($article->averageRate()); $i > 0; $i--)
+                                <span class="fa fa-star"></span>
+                                @endfor
+                            </small>
+                        </p>
+                    </div>
+                </a>
             </div>
+            @empty
+            <h3>No relelvent articles yet.</h3>
+            @endforelse
         </div>
-        @empty
-        <h3>No relelvent articles yet.</h3>
-        @endforelse
     </div>
 
 
     @endsection
+
