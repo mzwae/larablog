@@ -23,14 +23,15 @@
                             <small class="text-muted">
                                 <i class="fas fa-comment"> {{ $article->totalCommentsCount() }}</i>
                                 <i class="far fa-user pl-2"> {{ $article->author->name }}</i>
-                                <i class="fas fa-calendar-alt pl-2"> {{ $article->created_at->diffForHumans() }}</i>
+                                <i class="fas fa-calendar-alt pl-2"> {{ $article->created_at->diffForHumans() }} </i>
 
                                 {{-- Article rating --}}
+                                <i class="pr-2"></i>
                                 @for($i = round($article->averageRate()); $i > 0; $i--)
-                                <span class="fa fa-star text-success"></span>
+                                <i class="fa fa-star text-success"></i>
                                 @endfor
                                 @for($i = 5 - round($article->averageRate()); $i > 0; $i--)
-                                <span class="fa fa-star"></span>
+                                <i class="fa fa-star"></i>
                                 @endfor
                             </small>
                         </p>
