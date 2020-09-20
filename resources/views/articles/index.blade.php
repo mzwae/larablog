@@ -3,7 +3,7 @@
 @section('content')
 
 <div id="wrapper">
-    <div id="page" class="container">
+    <div id="page">
         @if(session('message'))
         <div class="alert alert-success mt-5" role="alert">
             {{ session('message') }}
@@ -19,22 +19,26 @@
                         <p class="card-text">
                             {{ $article->excerpt }}
                         </p>
-                        <p class="card-text">
+                        <p>
                             <small class="text-muted">
                                 <i class="fas fa-comment"> {{ $article->totalCommentsCount() }}</i>
-                                <i class="far fa-user pl-2"> {{ $article->author->name }}</i>
                                 <i class="fas fa-calendar-alt pl-2"> {{ $article->created_at->diffForHumans() }} </i>
+                            </p>
+                            <p>
+                                <i class="far fa-user"> {{ $article->author->name }}</i>
+
+                            </p>
+                            <p>
 
                                 {{-- Article rating --}}
-                                <i class="pr-2"></i>
                                 @for($i = round($article->averageRate()); $i > 0; $i--)
                                 <i class="fa fa-star text-success"></i>
                                 @endfor
                                 @for($i = 5 - round($article->averageRate()); $i > 0; $i--)
                                 <i class="fa fa-star"></i>
                                 @endfor
+                            </p>
                             </small>
-                        </p>
                     </div>
                 </a>
             </div>
