@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label for="rating">Rate it</label>
-                <select class="form-control" name="rating" id="">
+                <select class="custom-select" name="rating" id="">
                     <option value="1">1 - lowest rating</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
