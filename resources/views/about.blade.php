@@ -16,10 +16,10 @@
         </div>
         <div class="col-12 col-md-4">
 
-            <ul class="style1">
+            <ul class="list-unstyled">
                 @foreach($articles as $article)
                 <div class="row ml-2">
-                    <li class="first">
+                    <li class="">
                         <h3>
                             <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
                         </h3>
