@@ -19,11 +19,13 @@
             <ul class="list-unstyled">
                 @foreach($articles as $article)
                 <div class="row ml-2">
-                    <li class="">
-                        <h3>
-                            <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
-                        </h3>
-                        <p>{{ $article->excerpt }}</p>
+                    <li>
+                        <a href="/articles/{{ $article->id }}" class="text-decoration-none text-reset">
+                            <h3>
+                                {{ $article->title }}
+                            </h3>
+                            <p>{{ $article->excerpt }}</p>
+                        </a>
                     </li>
                 </div>
                 @endforeach
