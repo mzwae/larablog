@@ -12,7 +12,7 @@
         <div class="card-columns">
         @forelse($articles as $article)
             <div class="card">
-                <a href="/articles/{{ $article->id }}">
+                <a href="/articles/{{ $article->id }}" class="text-reset text-decoration-none">
                     <img class="card-img-top" src="/images/banner.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{$article->title}}</h5>
