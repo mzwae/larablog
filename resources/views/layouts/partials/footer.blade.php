@@ -39,7 +39,8 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">
-        MZ APPS © 2020 Copyright
+        &copy; MZ Apps. All rights reserved.
+
     </div>
     <!-- Copyright -->
 
