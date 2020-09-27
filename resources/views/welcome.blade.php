@@ -11,22 +11,24 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
+        <a href="/articles/{{$articles[0]->id}}" class="text-reset text-decoration-none">
             <img src="/images/banner.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h3>{{$articles[0]->title}}</h3>
                 <p>{{$articles[0]->excerpt}}</p>
             </div>
-
-
+        </a>
         </div>
         @foreach($articles as $index => $article)
         @if($index > 0)
         <div class="carousel-item">
+            <a href="/articles/{{$article->id}}" class="text-reset text-decoration-none">
             <img src="/images/banner.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h3>{{$article->title}}</h3>
                 <p>{{$article->excerpt}}</p>
             </div>
+        </a>
         </div>
         @endif
 
