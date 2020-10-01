@@ -3,7 +3,7 @@
 @section('content')
 <div id="wrapper">
     <div id="page" class="container">
-        <h1 class="heading has-text-weight-bold is-size-4">Edit Article</h1>
+        <h1 class="text-center m-5 font-weight-lighter">Edit Article</h1>
         <form action="/articles/{{ $article->id }}" method="post">
             @csrf
             @method('put')
