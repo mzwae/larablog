@@ -9,7 +9,8 @@
             {{ session('message') }}
         </div>
         @endif
-        <div class="card-columns">
+        <h1 class="text-center m-5 font-weight-lighter">Articles</h1>
+        <div class="card-columns m-5">
         @forelse($articles as $article)
             <div class="card">
                 <a href="/articles/{{ $article->id }}" class="text-reset text-decoration-none">
