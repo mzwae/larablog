@@ -6,7 +6,10 @@
             <div class="form-group">
                 <div class="form-group">
                     <label for="comment"></label>
-                    <textarea class="form-control" name="comment" id="" rows="3" placeholder="Add your comment here..."></textarea>
+                    <textarea class="form-control @error('comment') is-invalid @enderror" name="comment" id="" rows="3" placeholder="Add your comment here..."></textarea>
+                    @error('comment')
+                    <p class="text-danger">{{ $errors->first('comment') }}</p>
+                    @enderror
                 </div>
             </div>
             <div class="form-group">
