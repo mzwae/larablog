@@ -24,7 +24,7 @@
                     Excerpt
                 </label>
 
-                <textarea name="excerpt" id="excerpt" class="form-control @error('excerpt') is-invalid @enderror">{{ old('excerpt')}}</textarea>
+                <textarea name="excerpt" id="excerpt"  rows="5" style="height:100%;" class="form-control @error('excerpt') is-invalid @enderror">{{ old('excerpt')}}</textarea>
 
                 @error('excerpt')
                 <p class="text-danger">{{ $errors->first('excerpt') }}</p>
@@ -37,7 +37,7 @@
                     Body
                 </label>
 
-                <textarea name="body" id="editor" rows="14" class="form-control @error('body') is-invalid @enderror">{{ old('body')}}</textarea>
+                <textarea name="body" id="editor" class="form-control @error('body') is-invalid @enderror">{{ old('body')}}</textarea>
 
                 @error('body')
                 <p class="text-danger">{{ $errors->first('body') }}</p>
