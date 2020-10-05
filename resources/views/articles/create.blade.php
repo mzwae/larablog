@@ -11,10 +11,10 @@
                     Title
                 </label>
 
-                <input type="text" class="form-control @error('title') is-danger @enderror" name="title" id="title" value="{{ old('title') }}">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" value="{{ old('title') }}">
 
                 @error('title')
-                <p class="help is-danger">{{ $errors->first('title') }}</p>
+                <p class="text-danger">{{ $errors->first('title') }}</p>
                 @enderror
 
             </div>
@@ -24,10 +24,10 @@
                     Excerpt
                 </label>
 
-                <textarea name="excerpt" id="excerpt" class="form-control @error('excerpt') is-danger @enderror">{{ old('excerpt')}}</textarea>
+                <textarea name="excerpt" id="excerpt" class="form-control @error('excerpt') is-invalid @enderror">{{ old('excerpt')}}</textarea>
 
                 @error('excerpt')
-                <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                <p class="text-danger">{{ $errors->first('excerpt') }}</p>
                 @enderror
 
             </div>
@@ -37,10 +37,10 @@
                     Body
                 </label>
 
-                <textarea name="body" id="editor" rows="14" class="form-control @error('body') is-danger @enderror">{{ old('body')}}</textarea>
+                <textarea name="body" id="editor" rows="14" class="form-control @error('body') is-invalid @enderror">{{ old('body')}}</textarea>
 
                 @error('body')
-                <p class="help is-danger">{{ $errors->first('body') }}</p>
+                <p class="text-danger">{{ $errors->first('body') }}</p>
                 @enderror
             </div>
 
