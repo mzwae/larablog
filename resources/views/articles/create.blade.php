@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="wrapper">
+<div id="wrapper" class="m-5">
     <div id="page" class="container">
         <h1 class="text-center m-5 font-weight-lighter">Add New Article</h1>
         <form action="{{ route('articles.post')}}" method="post">
