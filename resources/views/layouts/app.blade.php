@@ -51,6 +51,10 @@
             /* thank you Erik J - negate effect of float*/
         }
 
+        .ck-editor__editable_inline {
+                min-height: 500px !important;
+            }
+
     </style>
 
 
@@ -80,7 +84,6 @@
             .catch(error => {
                 console.error(error);
             });
-
     </script>
 </body>
 </html>

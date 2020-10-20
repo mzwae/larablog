@@ -145,8 +145,14 @@ class ArticlesController extends Controller
      */
     public function storeComment(Article $article)
     {
-        // ddd($article);
+        // ddd(request());
         // ddd(request()->all());
+
+        request()->validate([
+            'comment' => 'required',
+            'rating' => 'required'
+        ]);
+
         $user = auth()->user();
 
         $user->comment($article, request()->comment, request()->rating);
